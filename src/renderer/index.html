@@ -16,52 +16,55 @@
       <img class="image" src="./assets/img/logo.png" alt="logo">
       <h1 class="h1">CryptoHack</h1>
     </header>
-    <section class="section informations">
-      <h2 class="h2">Informations</h2>
-      <div class="tableau">
-        <table>
-          <tr>
-            <th>Internet</th>
-            <th>Activation key</th>
-            <th>Show accounts</th>
-          </tr>
-          <div class="separator"></div>
-          <tr>
-            <td class="case" id="status"></td>
-            <td class="case">Contenu colonne 2</td>
-            <td class="case">Contenu colonne 2</td>
-          </tr>
-          <div class="separator-white"></div>
-        </table>
-        <div class="input">
-          <label for="key">Add key:</label>
-          <input type="text" id="key" name="key" />
-          <button class="button">Set key</button>
-        </div>
+    <section>
+      <div class="scanner">
+        <h2 class="title">
+          Scanner
+        </h2>
+        <button>Start</button>
       </div>
-    </section>
-    
-    <div class="accounts">
-         <table class="accounts_table">
-            <thead>
-              <tr>
-                <th>Passphrase</th>
-                <th>Wallet</th>
-                <th>Transactions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Passphrase 1</td>
-                <td>Wallet 1</td>
-                <td>Transactions 1</td>
-              </tr>
-            </tbody>
-         </table>
+      <div class="container">
+        <h2 class="title">
+          Stats
+        </h2>
+        <div class="stats">
+          <p>accounts found</p>
+          <p class="value">12</p>
         </div>
-
+        <div class="without_transaction">
+          <p>without Transactions</p>
+          <p class="value">12</p>
+        </div>
+        <div class="with_transaction">
+          <p>with Transactions</p>
+          <p class="value">12</p>
+        </div>
+      </div>  
+     
+      <div class="accounts">
+        <h2 class="title">
+          Accounts
+        </h2>
+        <table class="accounts_table">
+           <thead>
+             <tr>
+               <th>Passphrase</th>
+               <th>Wallet</th>
+               <th>Transactions</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>Passphrase 1</td>
+               <td>Wallet 1</td>
+               <td>Transactions 1</td>
+             </tr>
+           </tbody>
+        </table>
+       </div>
+    </section>
   </div>
-
-  <script src="./assets/js/checkOnline.js"></script>
+  <script src="./assets/js/index.js" type="module"></script>
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 </body>
 </html>

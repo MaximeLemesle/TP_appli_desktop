@@ -12,6 +12,11 @@ body {
     margin: 0;
 }
 
+h2.title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
 /* --- Header --- */
 
 .header {
@@ -28,20 +33,28 @@ body {
     width: 100px;
 }
 
-/* --- Section Informations --- */
-
-.section {
-    margin: 32px;
-    padding: 24px;
-    background: #e3e4e550;
-    border-radius: 12px;
+/* --- Section Scanner --- */
+.scanner button{
+    background-color: green;
+    color: #fff;
+    padding: 5px;
 }
-
-.section .separator {
-    width: 100%;
-    height: 2px;
-    background: #242526;
+.container{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
 }
+.container .stats{
+    background-color: rgb(61, 61, 250);
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+.container .value
+
 
 /* --- Section Accounts --- */
 

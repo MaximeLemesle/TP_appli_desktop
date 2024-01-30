@@ -49,6 +49,11 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
+  //autoriser le devtools
+  
+
+
+
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
