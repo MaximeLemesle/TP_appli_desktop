@@ -21,6 +21,16 @@ body {
     height: 100px;
     width: 100px;
 }
+
+/* --- Section Informations --- */
+
+.section {
+    padding: 24px;
+    background: #e3e4e550;
+}
+
+/* --- Section Accounts --- */
+
 .accounts{
     width: 100%;
     height: 100%;
