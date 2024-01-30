@@ -1,17 +1,49 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>CryptoHack</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
-    />
-    <link href="./assets/css/main.css" type="text/css" rel="stylesheet" />
-    <link rel="icon" href="./assets/img/logo.png" />
-  </head>
 
-  <body>
-    <div id="app"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>CryptoHack</title>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:" />
+  <link href="./assets/css/main.css" type="text/css" rel="stylesheet" />
+  <link rel="icon" href="./assets/img/logo.png" />
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <img class="image" src="./assets/img/logo.png" alt="logo">
+      <h1 class="h1">CryptoHack</h1>
+    </header>
+    <section class="informations">
+      <h2 class="h2">Informations</h2>
+      <div class="tableau">
+        <table>
+          <tr>
+            <th>Internet</th>
+            <th>Activation key</th>
+            <th>Show accounts</th>
+          </tr>
+          <div class="separator"></div>
+          <tr>
+            <td class="case" id="status"></td>
+            <td class="case">Contenu colonne 2</td>
+            <td class="case">Contenu colonne 2</td>
+          </tr>
+          <div class="separator-white"></div>
+        </table>
+        <div class="input">
+          <label for="key">Add key:</label>
+          <input type="text" id="key" name="key" />
+          <button class="button">Set key</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="./assets/js/checkOnline.js"></script>
+</body>
+
 </html>
