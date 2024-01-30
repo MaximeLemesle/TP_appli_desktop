@@ -1,1 +1,23 @@
 @import './base.css';
+
+/* --- Body --- */
+
+body {
+    background-color: #242526;
+    color: #E3E4E5;
+}
+
+/* --- Header --- */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.header .image {
+    height: 100px;
+    width: 100px;
+}
