@@ -34,45 +34,79 @@ h2.title{
 }
 
 /* --- Section Scanner --- */
+.scanner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
 .scanner button{
     background-color: green;
     color: #fff;
     padding: 5px;
+    width: 5%;
+    border: 0;
+    border-radius: 5px;
+    text-transform: uppercase ;
 }
+.scanner button:hover{
+    background-color: rgb(21, 166, 16);
+}
+
 .container{
-    width: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.container .title{
+    width: 100%;
+}
+.container .components{
+    width: 15%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-}
-.container .stats{
-    background-color: rgb(61, 61, 250);
-    padding: 15px;
     border-radius: 5px;
+    margin-left: 10px;
     color: #fff;
 }
-.container .value
+.container .components.stats{
+    background-color: rgb(61, 61, 250);
+}
+.container .components.without_transaction{
+    background-color: rgb(222, 27, 27);
+}
+.container .components.with_transaction{
+    background-color: rgb(21, 166, 16);
+}
 
 
 /* --- Section Accounts --- */
 
 .accounts{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center
+    margin: 10px;
 }
 .accounts .accounts_table{
-    border: 1px solid #000;
+    margin: 10px;
     width: 100%;
+    border-collapse: collapse; 
+    text-align: center;
 
 }
-.accounts .accounts_table th{
-    background-color: #000;
-    color: #fff;
 
+.accounts .accounts_table th,
+.accounts .accounts_table td {
+  border: 1px solid white;
+  padding: 8px 10px;
+}
+.accounts .accounts_table th{
+    text-align: center;
 }
