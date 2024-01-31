@@ -1,0 +1,16 @@
+{
+  "name": "crypto-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "ethers": "^6.10.0",
+    "nodemon": "^3.0.3"
+  }
+}
