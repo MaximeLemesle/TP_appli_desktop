@@ -2,10 +2,7 @@
   "name": "crypto-app",
   "version": "1.0.0",
   "type": "module",
-  "description": "A minimal Electron application with JavaScript",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",

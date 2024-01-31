@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['eslint:recommended', '@electron-toolkit']
+  extends: ['eslint:recommended', '@electron-toolkit'],
 }

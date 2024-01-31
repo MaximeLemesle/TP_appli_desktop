@@ -1,20 +1,21 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+import icon from '../renderer/assets/img/logo.png?asset'
 
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1200,
+    height: 800,
     show: false,
     autoHideMenuBar: true,
+    icon: icon,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
-    }
+      sandbox: false,
+    },
   })
 
   mainWindow.on('ready-to-show', () => {
@@ -50,9 +51,6 @@ app.whenReady().then(() => {
   })
 
   //autoriser le devtools
-  
-
-
 
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))

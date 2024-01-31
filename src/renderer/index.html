@@ -1,70 +1,56 @@
 <!doctype html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CryptoHack</title>
+    <link href="./assets/css/main.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="./assets/img/logo.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>CryptoHack</title>
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:" />
-  <link href="./assets/css/main.css" type="text/css" rel="stylesheet" />
-  <link rel="icon" href="./assets/img/logo.png" />
-</head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <img class="image" src="./assets/img/logo.png" alt="logo" />
+        <h1 class="h1">CryptoHack</h1>
+      </header>
+      <section>
+        <div class="scanner">
+          <h2 class="title">Scanner</h2>
+          <button id="start-btn">Start</button>
+        </div>
+        <div class="container">
+          <h2 class="title">Stats</h2>
+          <div class="components stats">
+            <p>accounts found</p>
+            <p class="value" id="account-found">0</p>
+          </div>
+          <div class="components without_transaction">
+            <p>without Transactions</p>
+            <p class="value" id="accounts-without-transaction">0</p>
+          </div>
+          <div class="components with_transaction">
+            <p>with Transactions</p>
+            <p class="value" id="accounts-with-transaction">0</p>
+          </div>
+        </div>
 
-<body>
-  <div id="app">
-    <header class="header">
-      <img class="image" src="./assets/img/logo.png" alt="logo">
-      <h1 class="h1">CryptoHack</h1>
-    </header>
-    <section>
-      <div class="scanner">
-        <h2 class="title">
-          Scanner
-        </h2>
-        <button>Start</button>
-      </div>
-      <div class="container">
-        <h2 class="title">
-          Stats
-        </h2>
-        <div class="components stats">
-          <p>accounts found</p>
-          <p class="value">12</p>
+        <div class="accounts">
+          <h2 class="title">Accounts</h2>
+          <table class="accounts_table">
+            <thead>
+              <tr>
+                <th>Passphrase</th>
+                <th>Wallet Adress</th>
+                <th>Wallet Amount</th>
+                <th>Transactions</th>
+              </tr>
+            </thead>
+            <tbody id="table"></tbody>
+          </table>
         </div>
-        <div class="components without_transaction">
-          <p>without Transactions</p>
-          <p class="value">12</p>
-        </div>
-        <div class="components with_transaction">
-          <p>with Transactions</p>
-          <p class="value">12</p>
-        </div>
-      </div>  
-     
-      <div class="accounts">
-        <h2 class="title">
-          Accounts
-        </h2>
-        <table class="accounts_table">
-           <thead>
-             <tr>
-               <th>Passphrase</th>
-               <th>Wallet</th>
-               <th>Transactions</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <td>Passphrase 1</td>
-               <td>Wallet 1</td>
-               <td>Transactions 1</td>
-             </tr>
-           </tbody>
-        </table>
-       </div>
-    </section>
-  </div>
-  <script src="./assets/js/index.js" type="module"></script>
-  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-</body>
+      </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.10.0/ethers.umd.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
