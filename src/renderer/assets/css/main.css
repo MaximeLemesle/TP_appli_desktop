@@ -5,6 +5,7 @@
 body {
   background-color: #242526;
   color: #e3e4e5;
+  overflow: hidden;
 }
 
 .h1,
@@ -67,7 +68,7 @@ h2.title {
   width: 100%;
 }
 .container .components {
-  width: 15%;
+  width: 30%;
   display: flex;
   justify-content: space-evenly;
   border-radius: 5px;
@@ -94,8 +95,7 @@ h2.title {
   margin: 10px;
 }
 .accounts .accounts_table {
-  margin: 10px;
-  width: 100%;
+  width: 98%;
   border-collapse: collapse;
   text-align: center;
 }

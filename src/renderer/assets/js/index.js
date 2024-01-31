@@ -3,9 +3,7 @@ const { Mnemonic, randomBytes } = ethers
 const renderAccountsFoundCount = document.querySelector('#account-found')
 const renderAccountsWithoutTransationCount = document.querySelector('#accounts-without-transaction')
 const renderAccountsWithTransationCount = document.querySelector('#accounts-with-transaction')
-
 const table = document.querySelector('#table')
-
 const startBtn = document.querySelector('#start-btn')
 
 let start = false
@@ -14,11 +12,15 @@ let accountsWithTransaction = 0
 let accountsWithoutTransaction = 0
 let intervalId
 
-const accountHaveTransaction = async (address) => {
+const accountGetTransaction = async (address) => {
   const url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=CH99TUEU5VEXK58Y38DYIM1RUQZSMCYDP4`
   const response = await fetch(url)
   const json = await response.json()
-  return json.message !== 'No transactions found'
+  return {
+    haveTransation:
+      json.message !== 'No transactions found' && json.result !== 'Max rate limit reached',
+    transaction: json.result,
+  }
 }
 
 const accountGetBalance = async (address) => {
@@ -45,8 +47,6 @@ startBtn.addEventListener('click', () => {
   start = !start
   startBtn.textContent = start ? 'Stop' : 'Start'
 
-  let transaction = false
-
   const updateUI = () => {
     renderAccountsFoundCount.textContent = accountsFound
     renderAccountsWithTransationCount.textContent = accountsWithTransaction
@@ -54,24 +54,23 @@ startBtn.addEventListener('click', () => {
   }
 
   const processAccount = async () => {
-    const { phrase, entropy } = Mnemonic.fromEntropy(randomBytes(16))
-    const wallet = await accountGetBalance(entropy)
+    let wallet = 0
+    const bytes = randomBytes(24)
+    const { phrase, entropy } = Mnemonic.fromEntropy(bytes)
+    const { haveTransation, transaction } = await accountGetTransaction(entropy)
+
     accountsFound++
 
-    if (wallet) {
-      transaction = await accountHaveTransaction(entropy)
-      transaction ? accountsWithTransaction++ : accountsWithoutTransaction++
+    if (haveTransation) {
+      wallet = await accountGetBalance(entropy)
+      console.log('wallet', wallet)
+      console.log('transaction', transaction)
+      accountsWithTransaction++
     } else accountsWithoutTransaction++
-    addRowToTable(table, phrase, entropy, wallet, transaction)
+
+    addRowToTable(table, phrase, entropy, wallet, haveTransation)
     updateUI()
   }
 
-  if (start) intervalId = setInterval(processAccount, 1000)
-  else clearInterval(intervalId)
-})
-
-window.addEventListener('dom-ready', () => {
-  const uaArr = window.getUserAgent().split(' ')
-  const newUaArr = uaArr.filter((uar) => !uar.startsWith('Electron'))
-  window.setUserAgent(newUaArr.join(' '))
+  start ? (intervalId = setInterval(processAccount, 400)) : clearInterval(intervalId)
 })
