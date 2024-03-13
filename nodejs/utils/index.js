@@ -18,3 +18,7 @@ export const accountGetBalance = async (address) => {
   const json = await response.json();
   return json.result / 1e18;
 };
+
+export const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
